@@ -26,7 +26,7 @@ const Application_card = ({arr,recruiter}) => {
     const handleReject = () => {
         setStatus('rejected');
         console.log(arr.jobId);
-        Axios.delete(`http://localhost:4000/recruiterRoute/applicationsReceived/${recruiter._id}`,{ data: { jobId: arr.jobId } }).then((res)=>{
+        Axios.delete(`https://jobifybackend-pjf3.onrender.com//recruiterRoute/applicationsReceived/${recruiter._id}`,{ data: { jobId: arr.jobId } }).then((res)=>{
             if(res.status===200){
                 alert("Application Rejected")
             }

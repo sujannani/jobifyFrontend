@@ -15,7 +15,7 @@ const applyJob = async ()=>{
     setDis(true);
     setApply('Applied');
     try {
-        Axios.put(`http://localhost:4000/recruiteeRoute/applyJob/${recruitee}`, {
+        Axios.put(`https://jobifybackend-pjf3.onrender.com/recruiteeRoute/applyJob/${recruitee}`, {
           jobId: arr._id,
           userId: recruitee,
         }).then((res)=>{
@@ -31,7 +31,7 @@ const applyJob = async ()=>{
         console.log('Application failed');
       }
       console.log(arr.hrId);
-      Axios.put(`http://localhost:4000/recruiterRoute/applicationsReceived/${arr.hrId}`,{jobId:arr._id,userId:recruitee,hrId:arr.hrId}).
+      Axios.put(`https://jobifybackend-pjf3.onrender.com/recruiterRoute/applicationsReceived/${arr.hrId}`,{jobId:arr._id,userId:recruitee,hrId:arr.hrId}).
       then((res)=>{
         if(res.status===200){
 
